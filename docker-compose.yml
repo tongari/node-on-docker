@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    container_name: node_container
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../node-on-docker-src:/usr/src/node-on-docker
+    ports:
+      - "3000:3000"

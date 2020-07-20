@@ -4,6 +4,9 @@ FROM node:lts
 # vimを使えるようにする
 RUN apt-get update -qq && apt-get install -y vim
 
+# Firebase CLIをインストール
+RUN npm install -g firebase-tools
+
 # 作業用（working）ディレクトリを指定
 WORKDIR /usr/src/node-on-docker
 
@@ -17,7 +20,7 @@ WORKDIR /usr/src/node-on-docker
 # COPY . .
 
 # 実行時、コンテナが特定のポートをリッスンするよう Docker に通知
-EXPOSE 3000
+# EXPOSE 3000
 
 # コンテナ内で指定したコマンドを実行
 # CMD [ "npm", "start" ]
